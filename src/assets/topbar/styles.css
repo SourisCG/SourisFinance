@@ -1,0 +1,39 @@
+#titlebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 38px;
+    padding-left: 12px;
+    background: #311D3F;
+    color: #fff;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
+}
+
+#titlebar button {
+    -webkit-app-region: no-drag;
+}
+
+.titlebar-actions {
+    display: flex;
+    height: 100%;
+}
+
+.titlebar-button {
+    width: 46px;
+    height: 100%;
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-size: 14px;
+    cursor: default;
+}
+
+.titlebar-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#close:hover {
+    background: #e81123;
+}
