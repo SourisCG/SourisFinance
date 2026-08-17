@@ -1,0 +1,26 @@
+/*
+    Colors for the application
+    E23E57
+    88304E
+    522546
+    311D3F
+*/
+*{
+    background-color: #311D3F;
+    color: #FFFFFF;
+}
+
+#options{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 1.5rem;
+    padding: auto;
+    width: 100%;
+}
+
+.option{
+    background-color: #E23E57;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+}

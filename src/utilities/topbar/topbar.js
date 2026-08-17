@@ -3,7 +3,7 @@ const appWindow = getCurrentWindow();
 
 const stylesheet = document.createElement('link');
 stylesheet.rel = 'stylesheet';
-stylesheet.href = './assets/topbar/styles.css';
+stylesheet.href = '../utilities/topbar/styles.css';
 
 document.head.appendChild(stylesheet);
 
