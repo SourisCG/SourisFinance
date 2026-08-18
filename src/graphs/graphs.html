@@ -4,8 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="graphs.css">
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../expense/expense.html">Expenses and income</a></li>
+            <li><a href="../reports/reports.html">Reports</a></li>
+            <li><a href="../archives/archives.html">Archives</a></li>
+            <li><a href="../goals/goals.html">Goals</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Graphs</h1>
+        <div id="graph-container">
+            <canvas id="expense-income-graph"></canvas>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="graphs.js"></script>
     <script type="module" src="../utilities/topbar/topbar.js"></script>
 </body>
 </html>

@@ -1,0 +1,13 @@
+:root {
+    --bg: #0f172a;
+    --accent: #38bdf8;
+    --text: #f1f5f9;
+    --hover: #0ea5e9;
+    --button: #f83838;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+}

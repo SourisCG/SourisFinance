@@ -63,6 +63,7 @@ html, body {
     overflow-y: auto;
     box-sizing: border-box;
     margin-top: var(--titlebar-height);
+    padding: 0 1rem 1rem;
 }
 
 .resize-handle {

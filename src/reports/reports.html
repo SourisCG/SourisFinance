@@ -3,9 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reports.css">
     <title>Document</title>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../expense/expense.html">Expenses and income</a></li>
+            <li><a href="../graphs/graphs.html">Graphs</a></li>
+            <li><a href="../archives/archives.html">Archives</a></li>
+            <li><a href="../goals/goals.html">Goals</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Reports</h1>
+        <div id="report-box">
+            <h4>Select Time Period</h4>
+            <select name="Selection" id="time-selection">
+                <option value="days">Days</option>
+                <option value="weeks">Weeks</option>
+                <option value="months">Months</option>
+            </select>
+            <div id="report-content">
+                <h2>Report Content</h2>
+                <p>This is where the report content will be displayed based on the selected time period.</p>
+            </div>
+        </div>
+    </main>
     <script type="module" src="../utilities/topbar/topbar.js"></script>
 </body>
 </html>
