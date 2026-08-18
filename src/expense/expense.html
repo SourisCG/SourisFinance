@@ -3,9 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="expense.css">
     <title>Document</title>
 </head>
 <body>
+    <nav role="navigation" aria-label="Main navigation">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../expense/expense.html">Expenses</a></li>
+            <li><a href="../reports/reports.html">Reports</a></li>
+            <li><a href="../graphs/graphs.html">Graphs</a></li>
+            <li><a href="../archives/archives.html">Archives</a></li>
+            <li><a href="../goals/goals.html">Goals</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Expenses and income</h1>
+        <div class="forms">
+            <div>
+                <form id="income-form" class="form">
+                    <h2>Add New Income</h2>
+                    <label for="income-amount">Amount:</label>
+                    <input type="number" placeholder="Example: 3000" id="income-amount" name="income-amount" required>
+                    <label for="income-description">Description:</label>
+                    <input type="text" placeholder="Example: Salary" id="income-description" name="income-description" required>
+                    <br>
+                    <button class="btn" type="submit">Add Income</button>
+                </form> 
+            </div>
+
+            <div>
+                <form id="expense-form" class="form">
+                    <h2>Add New Expense</h2>
+                    <label for="expense-amount">Amount:</label>
+                    <input type="number" placeholder="Example: 200" id="expense-amount" name="expense-amount" required>
+                    <label for="expense-description">Description:</label>
+                    <input type="text" id="expense-description" placeholder="Example: New clothes" name="expense-description" required>
+                    <br>
+                    <button class="btn" type="submit">Add Expense</button>
+                </form>
+            </div>
+        </div>
+
+        <div>
+            <h2>Expenses and Income List</h2>
+            <ul id="expense-income-list">
+                <!-- List of expenses and income will be populated here -->
+            </ul>
+
+            <p id="total-amount">Total: $0.00</p>
+        </div>
+    </main>
+
     <script type="module" src="../utilities/topbar/topbar.js"></script>
+    <script type="module" src="expense.js"></script>
 </body>
 </html>

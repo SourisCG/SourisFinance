@@ -1,13 +1,13 @@
-/*
-    Colors for the application
-    E23E57
-    88304E
-    522546
-    311D3F
-*/
-*{
-    background-color: #311D3F;
-    color: #FFFFFF;
+:root {
+    --bg: #0f172a;
+    --accent: #38bdf8;
+    --text: #f1f5f9;
+    --hover: #0ea5e9;
+}
+
+body{
+    background-color: var(--bg);
+    color: var(--text);
 }
 
 #options{
@@ -19,8 +19,16 @@
 }
 
 .option{
-    background-color: #E23E57;
+    background-color: var(--accent);
+    color: #0f172a;
     text-align: center;
+    text-decoration: none;
     border-radius: 10px;
     cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.option:hover{
+    background-color: var(--hover);
+    transform: translateY(-2px);
 }

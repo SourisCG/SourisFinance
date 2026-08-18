@@ -1,12 +1,32 @@
+:root {
+    --titlebar-height: 38px;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+#title{
+    margin-left: 10px;
+}
+
 #titlebar {
+    position: fixed;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 38px;
-    padding-left: 12px;
-    background: #311D3F;
-    color: #fff;
+    height: var(--titlebar-height);
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-left: 0;
+    background: #0f172a;
+    color: #f1f5f9;
     user-select: none;
+    z-index: 9999;
     -webkit-user-select: none;
     -webkit-app-region: drag;
 }
@@ -25,15 +45,28 @@
     height: 100%;
     border: none;
     background: transparent;
-    color: #fff;
+    color: #f1f5f9;
     font-size: 14px;
     cursor: default;
 }
 
 .titlebar-button:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(148, 163, 184, 0.2);
 }
 
 #close:hover {
     background: #e81123;
+}
+
+#app-content {
+    height: calc(100vh - var(--titlebar-height));
+    overflow-y: auto;
+    box-sizing: border-box;
+    margin-top: var(--titlebar-height);
+}
+
+.resize-handle {
+    background: transparent;
+    -webkit-app-region: no-drag;
+    user-select: none;
 }
