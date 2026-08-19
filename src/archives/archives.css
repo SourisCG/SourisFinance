@@ -1,0 +1,148 @@
+:root{
+    --bg: #0f172a;
+    --accent: #38bdf8;
+    --text: #f1f5f9;
+    --hover: #0ea5e9;
+    --button: #f83838;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+nav ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ul li a{
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+ul li a:hover{
+    background-color: rgba(56, 189, 248, 0.15);
+}
+
+#archives-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+.archive-section{
+    margin: 2rem;
+    padding: 1rem;
+    background-color: rgba(56, 189, 248, 0.15);
+    border: 1px solid var(--accent);
+    width: 80%;
+}
+.archive-title{
+    font-size: 1.5rem;
+    margin-top: 0rem;
+}
+#archives{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.archives{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+}
+
+.archives th,
+.archives td{
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+}
+
+.archives th{
+    background-color: rgba(15, 23, 42, 0.8);
+    color: var(--accent);
+}
+
+.archives tbody tr{
+    transition: background-color 0.2s ease;
+}
+
+.archives tbody tr:hover{
+    background-color: rgba(56, 189, 248, 0.15);
+}
+
+.archives tbody td:first-child a{
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.archives th:last-child{
+    width: 1%;
+    white-space: nowrap;
+}
+
+.options-cell{
+    position: relative;
+    text-align: center;
+    width: 1%;
+    white-space: nowrap;
+}
+
+.menu-button{
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-size: 1.2rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 4px;
+    border-radius: 5px;
+}
+
+.menu-button:hover{
+    background-color: rgba(56, 189, 248, 0.2);
+}
+
+.menu{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #1e293b;
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    min-width: 120px;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.menu.open{
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item{
+    background: transparent;
+    border: none;
+    color: var(--text);
+    text-align: left;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+.menu-item:hover{
+    background-color: rgba(56, 189, 248, 0.2);
+}

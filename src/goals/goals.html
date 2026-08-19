@@ -4,8 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="goals.css">
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../expense/expense.html">Expenses and income</a></li>
+            <li><a href="../reports/reports.html">Reports</a></li>
+            <li><a href="../graphs/graphs.html">Graphs</a></li>
+            <li><a href="../archives/archives.html">Archives</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Goals</h1>
+        <div id="goals-tables">
+            <section id="daily-goals" class="goals-table">
+                <div class="goals-table-header">
+                    <h2>Daily Goals</h2>
+                    <button>Add Daily Goal</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Goal</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><a href="#">Goal 1</a></td><td><button class="delete-goal">Delete</button></td></tr>
+                        <tr><td><a href="#">Goal 2</a></td><td><button class="delete-goal">Delete</button></td></tr>
+                        <tr><td><a href="#">Goal 3</a></td><td><button class="delete-goal">Delete</button></td></tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="weekly-goals" class="goals-table">
+                <div class="goals-table-header">
+                    <h2>Weekly Goals</h2>
+                    <button>Add Weekly Goal</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Goal</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><a href="#">Goal 1</a></td><td><button class="delete-goal">Delete</button></td></tr>
+                        <tr><td><a href="#">Goal 2</a></td><td><button class="delete-goal">Delete</button></td></tr>
+                        <tr><td><a href="#">Goal 3</a></td><td><button class="delete-goal">Delete</button></td></tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="monthly-goals" class="goals-table">
+                <div class="goals-table-header">
+                    <h2>Monthly Goals</h2>
+                    <button>Add Monthly Goal</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Goal</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><a href="#">Goal 1</a></td><td><button class="delete-goal">Delete</button></td></tr>
+                        <tr><td><a href="#">Goal 2</a></td><td><button class="delete-goal">Delete</button></td></tr>
+                        <tr><td><a href="#">Goal 3</a></td><td><button class="delete-goal">Delete</button></td></tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="goals-table">
+                <h2>Goal Progress</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Goal</th>
+                            <th>Progress</th>
+                            <th>Deadline</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Goal 1</td>
+                            <td>50%</td>
+                            <td>2024-06-30</td>
+                        </tr>
+                        <tr>
+                            <td>Goal 2</td>
+                            <td>75%</td>
+                            <td>2024-07-15</td>
+                        </tr>
+                        <tr>
+                            <td>Goal 3</td>
+                            <td>20%</td>
+                            <td>2024-08-01</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </main>
     <script type="module" src="../utilities/topbar/topbar.js"></script>
 </body>
 </html>

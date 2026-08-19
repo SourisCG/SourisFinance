@@ -4,9 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="archives.css">
 </head>
 <body>
-    
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../expense/expense.html">Expenses and income</a></li>
+            <li><a href="../reports/reports.html">Reports</a></li>
+            <li><a href="../graphs/graphs.html">Graphs</a></li>
+            <li><a href="../goals/goals.html">Goals</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Archives</h1>
+        <div id="archives-container">
+            <div class="archive-section" id="daily-archives">
+                <h4 class="archive-title">Daily</h4>
+                <table class="archives">
+                    <thead>
+                        <tr>
+                            <th>Archivo</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><a href="#">2023-10-01</a></td><td></td></tr>
+                        <tr><td><a href="#">2023-10-02</a></td><td></td></tr>
+                        <tr><td><a href="#">2023-10-03</a></td><td></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="archive-section" id="weekly-archives">
+                <h4 class="archive-title">Weekly</h4>
+                <table class="archives">
+                    <thead>
+                        <tr>
+                            <th>Archivo</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><a href="#">2023-W40</a></td><td></td></tr>
+                        <tr><td><a href="#">2023-W41</a></td><td></td></tr>
+                        <tr><td><a href="#">2023-W42</a></td><td></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="archive-section" id="monthly-archives">
+                <h4 class="archive-title">Monthly</h4>
+                <table class="archives">
+                    <thead>
+                        <tr>
+                            <th>Archivo</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><a href="#">2023-09</a></td><td></td></tr>
+                        <tr><td><a href="#">2023-10</a></td><td></td></tr>
+                        <tr><td><a href="#">2023-11</a></td><td></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <script src="archives.js"></script>
     <script type="module" src="../utilities/topbar/topbar.js"></script>
 </body>
 </html>
