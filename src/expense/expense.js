@@ -3,3 +3,5 @@ document.querySelectorAll("input[type='number']").forEach(input => {
         event.preventDefault();
     });
 });
+
+

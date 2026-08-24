@@ -1,4 +1,4 @@
-import Database from "@tauri-apps/plugin-sql";
+import { getDb } from "./utilities/database.js";
 import { openDocumentHtml } from "./utilities/navegation.js";
 
 const { invoke } = window.__TAURI__.core;
@@ -15,3 +15,8 @@ openDocumentHtml(reports);
 openDocumentHtml(graphs);
 openDocumentHtml(archives);
 openDocumentHtml(goals);
+
+console.log("[Home] Iniciando, llamando getDb()...");
+getDb()
+    .then(() => console.log("[Home] DB loaded in home"))
+    .catch((e) => console.error("[Home] getDb fail in home:", e));
