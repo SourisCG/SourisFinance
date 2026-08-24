@@ -1,3 +1,4 @@
+import Database from "@tauri-apps/plugin-sql";
 import { openDocumentHtml } from "./utilities/navegation.js";
 
 const { invoke } = window.__TAURI__.core;
