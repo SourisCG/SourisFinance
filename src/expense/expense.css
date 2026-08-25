@@ -83,6 +83,22 @@ h2{
 .btn:hover{
     background-color: var(--hover);
 }
+.delete-button{
+    background-color: var(--button);
+    color: var(--text);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-width: 100px;
+    max-height: 40px;
+    font-size: 0.7rem;
+    align-self: center;
+}
+.delete-button:hover{
+    background-color: var(--hover);
+}
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
