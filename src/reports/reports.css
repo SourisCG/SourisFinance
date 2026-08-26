@@ -58,8 +58,19 @@ h4{
     color: var(--accent );
 }
 #time-selection{
-    width: 100%;
+    appearance: none;
+    background-color: var(--button);
+    color: var(--text);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
     max-width: fit-content;
+}
+#time-selection:hover{
+    background-color: var(--hover);
 }
 h2{
     font-size: 2rem;
@@ -72,4 +83,51 @@ p{
     font-size: 1rem;
     margin-bottom: 0.5rem;
     color: var(--text);
+}
+
+.report-block{
+    background-color: rgba(15, 23, 42, 0.8);
+    border: 1px solid var(--accent);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+.report-block-title{
+    margin: 0 0 0.5rem 0;
+    color: var(--accent);
+    font-size: 1.1rem;
+}
+.report-block-table{
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--text);
+}
+.report-block-table th,
+.report-block-table td{
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+}
+.report-block-table th{
+    background-color: rgba(15, 23, 42, 0.8);
+    color: var(--accent);
+}
+
+.report-pagination{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.report-pagination button{
+    background-color: var(--button);
+    color: var(--text);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.report-pagination button:disabled{
+    opacity: 0.4;
+    cursor: not-allowed;
 }

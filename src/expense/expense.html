@@ -47,21 +47,12 @@
 
         <div>
             <h2>Expenses and Income List</h2>
-            <table id="expense-income-list">
-                <thead>
-                    <tr>
-                        <th>Type</th>
-                        <th>Amount</th>
-                        <th>Description</th>
-                        <th>Date</th>
-                        <th>Options</th>
-                    </tr>
-                </thead>
-                <tbody id="data-table-body">
-                    <!-- List of expenses and income will be populated here -->
-                </tbody>
-            </table>
-
+            <select id="period-selection">
+                <option value="days">Days</option>
+                <option value="weeks">Weeks</option>
+                <option value="months">Months</option>
+            </select>
+            <div id="expense-list-container"></div>
             <p id="total-amount">Balance: $0.00</p>
         </div>
     </main>
