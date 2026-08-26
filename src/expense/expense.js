@@ -13,7 +13,7 @@ const listContainer = document.getElementById("expense-list-container");
 // Returns the Monday (start of the week) at 00:00
 function startOfWeek(date) {
     const d = new Date(date);
-    const day = (d.getDay() + 6) % 7; // domingo=0 -> lunes=0
+    const day = (d.getDay() + 6) % 7;
     d.setDate(d.getDate() - day);
     d.setHours(0, 0, 0, 0);
     return d;
@@ -114,10 +114,10 @@ async function loadTable(period) {
     const expenses = await getAllExpenses();
     const incomes = await getAllIncomes();
 
-    // Merge everything and tag the type (description or source, depending on schema)
+    // Merge everything and tag the type
     const items = [
-        ...expenses.map(e => ({ ...e, type: "Expense", description: e.description ?? e.source ?? "" })),
-        ...incomes.map(i => ({ ...i, type: "Income", description: i.description ?? i.source ?? "" }))
+        ...expenses.map(e => ({ ...e, type: "Expense", description: e.description ?? "" })),
+        ...incomes.map(i => ({ ...i, type: "Income", description: i.description ?? "" }))
     ];
 
     // Group into blocks by key

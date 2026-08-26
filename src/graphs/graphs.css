@@ -30,3 +30,20 @@ ul li a{
 ul li a:hover{
     background-color: rgba(56, 189, 248, 0.15);
 }
+
+#period-select{
+    appearance: none;
+    background-color: var(--button);
+    color: var(--text);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    max-width: fit-content;
+    margin-bottom: 1rem;
+}
+#period-select:hover{
+    background-color: var(--hover);
+}

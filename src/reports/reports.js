@@ -45,10 +45,10 @@ async function renderReport(period) {
     const expenses = await getAllExpenses();
     const incomes = await getAllIncomes();
 
-    // Merge everything and tag the type (description or source, depending on schema)
+    // Merge everything and tag the type
     const items = [
-        ...expenses.map(e => ({ ...e, type: "Expense", description: e.description ?? e.source ?? "" })),
-        ...incomes.map(i => ({ ...i, type: "Income", description: i.description ?? i.source ?? "" }))
+        ...expenses.map(e => ({ ...e, type: "Expense", description: e.description ?? "" })),
+        ...incomes.map(i => ({ ...i, type: "Income", description: i.description ?? "" }))
     ];
 
     // Group into blocks by key
