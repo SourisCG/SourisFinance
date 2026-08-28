@@ -59,3 +59,16 @@ chart = new Chart(document.getElementById("expense-income-graph"), {
 
     return chart;
 }
+
+export async function chartToBase64(period = "months") {
+    Chart.register(...registerables);
+    const data = await loadData();
+    const chartData = data.reduce((acc, item) => {
+        const key = getKey(item, period);
+        if (!acc[key]) {
+            acc[key] = { Expense: 0, Income: 0 };
+        }
+        acc[key][item.type] += item.amount;
+        return acc;
+    }, {});
+}
