@@ -71,4 +71,27 @@ export async function chartToBase64(period = "months") {
         acc[key][item.type] += item.amount;
         return acc;
     }, {});
+    const todayDate = new Date().toISOString();
+    const todayKey = getKey({ date: todayDate }, period);
+    const todayData = chartData[todayKey] || { Expense: 0, Income: 0 };
+    const canvas = document.createElement("canvas");
+    canvas.width = 700;
+    canvas.height = 300;
+    canvas.style.display = "none";
+    document.body.appendChild(canvas);
+    new Chart(canvas.getContext("2d"), {
+        type: "bar",
+        data: {
+            labels: ["Income", "Expense"],
+            datasets: [{
+                label: "Amount",
+                data: [todayData.Income, todayData.Expense],
+                backgroundColor: ["green", "red"]
+            }]
+        },
+        options: { responsive: false, animation: false }
+    });
+    const base64Image = canvas.toDataURL("image/png").split(",")[1];
+    canvas.remove();
+    return base64Image;
 }
