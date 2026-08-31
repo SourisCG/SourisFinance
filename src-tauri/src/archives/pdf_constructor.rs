@@ -55,13 +55,22 @@ pub fn generate_pdf(
     let bytes = STANDARD.decode(image_b64).map_err(|e| format!("Error decoding base64: {}", e))?;
     let image = RawImage::decode_from_bytes(&bytes, &mut Vec::new()).map_err(|e| format!("Error decoding image: {}", e))?;
     let xobj_id = doc.add_image(&image);
-    for (i, block) in blocks.iter().enumerate() {
-        let mut page_ops = Vec::new();
-        if i == 0 {
-            page_ops.push(Op::UseXobject { id: xobj_id.clone(), transform: XObjectTransform{scale_x: Some(0.5), scale_y: Some(0.5), translate_x: Some(Pt(20.0)), translate_y: Some(Pt(150.0)), ..Default::default() } });
-        }
-        page_ops.extend(render_block(block));
-        pages.push(PdfPage::new(Mm(210.0), Mm(297.0), page_ops));
+
+    let mut cover_ops = text_ops("Monthly Summary", Mm(20.0), Mm(280.0), Pt(18.0));
+    cover_ops.push(Op::UseXobject {
+        id: xobj_id.clone(),
+        transform: XObjectTransform {
+            scale_x: Some(2.5),
+            scale_y: Some(2.5),
+            translate_x: Some(Pt(88.0)),
+            translate_y: Some(Pt(330.0)),
+            ..Default::default()
+        },
+    });
+    pages.push(PdfPage::new(Mm(210.0), Mm(297.0), cover_ops));
+
+    for block in &blocks {
+        pages.push(PdfPage::new(Mm(210.0), Mm(297.0), render_block(block)));
     }
     let pdf_bytes = doc.with_pages(pages).save(&PdfSaveOptions::default(), &mut Vec::new());
 
