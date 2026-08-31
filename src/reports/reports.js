@@ -1,8 +1,13 @@
 import { getAllExpenses } from "../utilities/database.js";
 import { getAllIncomes } from "../utilities/database.js";
+import { invoke } from "@tauri-apps/api/core";
+import { save } from "@tauri-apps/plugin-dialog";
+import { chartToBase64 } from "../utilities/graphs.js";
+import { Title } from "chart.js";
 
 const select = document.getElementById("time-selection");
 const content = document.getElementById("report-container");
+const exportPDFButton = document.getElementById("export-pdf");
 
 const pageSize = 5;
 let currentPage = 0;
@@ -120,6 +125,39 @@ function paint() {
         if (end < lastKeys.length) { currentPage++; paint(); }
     });
 }
+
+exportPDFButton.addEventListener("click", async () => {
+    const path = await save({
+        defaultPath: "reporte.pdf",
+        filters: [{ name: "PDF Files", extensions: ["pdf"] }],
+    });
+    if (!path) return;                                   // usuario canceló
+
+    const blocks = lastKeys.map(key => {
+        const rows = lastGroups[key].map(item => ({
+            kind: item.type,                             // "Expense" | "Income"
+            amount: item.amount,
+            description: item.description,
+        }));
+        return {
+            title: formatTitle(key, lastPeriod),          // la función que ya tienes
+            rows,
+            income_total: rows.filter(r => r.kind === "Income").reduce((s, r) => s + r.amount, 0),
+            expense_total: rows.filter(r => r.kind === "Expense").reduce((s, r) => s + r.amount, 0),
+        };
+    });
+
+    try {
+        await invoke("generate_pdf", {
+            title: "SourisFinance Report",
+            blocks,
+            imageB64: await chartToBase64("months"),      // periodo, no chart
+            route: path,
+        });
+    } catch (error) {
+        console.error(error);
+    }
+});
 
 select.addEventListener("change", (e) => renderReport(e.target.value));
 renderReport(select.value);
