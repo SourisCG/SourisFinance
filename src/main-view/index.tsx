@@ -9,11 +9,11 @@ export function MainView() {
       <p>This is the main content area of the application. <br />
       Select whatever you need.</p>
 
-      {LinkComponent("expenses", "Expenses and Incomes", "Manage your expenses and incomes.")}
+      {LinkComponent("/expenses", "Expenses and Incomes", "Manage your expenses and incomes.")}
 
-      {LinkComponent("reports", "Reports", "View your financial reports.")}
+      {LinkComponent("/reports", "Reports", "View your financial reports.")}
 
-      {LinkComponent("config", "Configuration", "Manage your application settings.")}
+      {LinkComponent("/configuration", "Configuration", "Manage your application settings.")}
 
     </div>
   );
