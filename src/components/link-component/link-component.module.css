@@ -1,23 +1,26 @@
-.link{
-    background-color: cadetblue;
-    text-decoration: none;
-    color: seashell;
-    display: block;
-    border: 2px solid rgba(0, 123, 255, 0.5);
-    padding: 20px;
-    margin: 5vh auto;
-    text-align: center;
-    width: 40%;
-    height: 18vh;
-    user-select: none;
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+.link {
+  background-color: cadetblue;
+  text-decoration: none;
+  color: seashell;
+  display: block;
+  border: 2px solid rgba(0, 123, 255, 0.5);
+  padding: 20px;
+  margin: 5vh auto;
+  text-align: center;
+  width: 40%;
+  height: 18vh;
+  user-select: none;
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    border-color 0.3s;
 }
-.title{
-    font-size: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+.title {
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
-.link:hover{
-    background-color: rgba(0, 123, 255, 0.5);
-    color: white;
-    border-color: rgba(0, 123, 255, 1);
+.link:hover {
+  background-color: rgba(0, 123, 255, 0.5);
+  color: white;
+  border-color: rgba(0, 123, 255, 1);
 }
