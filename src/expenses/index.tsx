@@ -4,6 +4,7 @@ import { ReportBoxComponent } from "../components/report-box/report-box-componen
 export function ExpensesView() {
   return (
     <>
+      <h1>Expenses and Incomes</h1>
       {ReportBoxComponent()}
       {LinkComponent("/", "Main View", "Return to the main view of the application.")}
     </>
